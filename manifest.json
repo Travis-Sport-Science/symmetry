@@ -1,0 +1,107 @@
+{
+  "name": "HW Limb Imbalance Gauge",
+  "logoUrl": "https://www.gstatic.com/images/icons/material/system/2x/speed_black_48dp.png",
+  "organization": "Holistic Wellness / Sport Science",
+  "description": "Semi-circular speedometer gauge for left/right limb imbalance. Negative values indicate Left, positive indicate Right. Fully configurable labels, colors, and font.",
+  "supportUrl": "https://support.google.com/looker-studio/answer/7389909",
+  "components": [
+    {
+      "name": "Gauge",
+      "description": "Left/Right imbalance gauge (-100 to +100)",
+      "iconUrl": "https://www.gstatic.com/images/icons/material/system/2x/speed_black_48dp.png",
+      "type": "VISUALIZATION",
+      "resource": {
+        "js": [
+          "main.js"
+        ],
+        "html": [
+          "index.html"
+        ]
+      },
+      "datasource": {
+        "requiredFields": [
+          {
+            "id": "imbalance",
+            "name": "Imbalance Percent",
+            "type": "NUMBER",
+            "concept": "METRIC",
+            "aggregation": "NONE"
+          }
+        ],
+        "fields": []
+      },
+      "style": [
+        {
+          "id": "leftLabel",
+          "label": "Left label text",
+          "type": "TEXTINPUT",
+          "defaultValue": "Left"
+        },
+        {
+          "id": "rightLabel",
+          "label": "Right label text",
+          "type": "TEXTINPUT",
+          "defaultValue": "Right"
+        },
+        {
+          "id": "fontFamily",
+          "label": "Font Family",
+          "type": "TEXTINPUT",
+          "defaultValue": "Inter, Roboto, Arial, sans-serif"
+        },
+        {
+          "id": "needleColor",
+          "label": "Needle Color",
+          "type": "FILL_COLOR",
+          "defaultValue": "#1f77b4"
+        },
+        {
+          "id": "gaugeColor",
+          "label": "Gauge Arc Color",
+          "type": "BORDER_COLOR",
+          "defaultValue": "#333333"
+        },
+        {
+          "id": "tickColor",
+          "label": "Tick/Label Color",
+          "type": "FONT_COLOR",
+          "defaultValue": "#333333"
+        },
+        {
+          "id": "balanceBand",
+          "label": "Zero Balance Band (\u00b1 %)",
+          "type": "NUMBER",
+          "defaultValue": 5
+        },
+        {
+          "id": "bandColor",
+          "label": "Balance Band Color",
+          "type": "FILL_COLOR",
+          "defaultValue": "#dddddd"
+        },
+        {
+          "id": "minVal",
+          "label": "Minimum (%)",
+          "type": "NUMBER",
+          "defaultValue": -100
+        },
+        {
+          "id": "maxVal",
+          "label": "Maximum (%)",
+          "type": "NUMBER",
+          "defaultValue": 100
+        },
+        {
+          "id": "tickStep",
+          "label": "Tick step (%)",
+          "type": "NUMBER",
+          "defaultValue": 20
+        }
+      ],
+      "options": {
+        "allowCustomColors": true,
+        "supportsHover": false
+      }
+    }
+  ]
+}
